@@ -59,7 +59,12 @@ def get_ship_location():
 
 
 def computer_guess():
-    pass
+    """
+    This function generates a random guess for the computer's move
+    on the game board.
+    """
+    guess_row, guess_column = randint(0, 4), randint(0, 4)
+    return guess_row, guess_column
 
 
 def count_hit_ships():
