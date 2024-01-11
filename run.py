@@ -31,7 +31,7 @@ letters_to_numbers = {
 
 def create_ships():
     """
-    this function places five ships randomly on the board, making
+    This function places five ships randomly on the board, making
     sure not to overlap them by checking if a chosen position is
     already occupied before placing a ship.
     """
@@ -43,7 +43,19 @@ def create_ships():
 
 
 def get_ship_location():
-    pass
+    """
+    This function ensures that the user provides valid row and column
+    inputs for the location of a ship on the game board.
+    """
+    row = input("Enter the row of the ship: ").upper()
+    while row not in "12345":
+        print('Please choose a valid row as the current selection is not suitable')
+        row = input("Enter the row of the ship: ").upper()
+    column = input("Enter the column of the ship: ").upper()
+    while column not in "ABCDE":
+        print('Please choose a valid column as the current selection is not suitable')
+        column = input("Enter the column of the ship: ").upper()
+    return int(row) - 1, letters_to_numbers[column]
 
 
 def computer_guess():
