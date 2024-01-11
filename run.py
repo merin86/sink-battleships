@@ -30,7 +30,16 @@ letters_to_numbers = {
 
 
 def create_ships():
-    pass
+    """
+    this function places five ships randomly on the board, making
+    sure not to overlap them by checking if a chosen position is
+    already occupied before placing a ship.
+    """
+    for ship in range(5):
+        ship_row, ship_column = randint(0, 4), randint(0, 4)
+        while board[ship_row][ship_column] == "X":
+            ship_row, ship_column = randint(0, 4), randint(0, 4)
+        board[ship_row][ship_column] = "X"
 
 
 def get_ship_location():
