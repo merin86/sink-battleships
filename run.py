@@ -20,6 +20,7 @@ def print_board(board):
     for row_number, row in enumerate(board, start=1):
         print(f"{row_number}|{'|'.join(row)}|")
 
+# Converts a letter to its corresponding numerical value
 letters_to_numbers = {
     'A': 0,
     'B': 1,
@@ -80,5 +81,12 @@ def count_hit_ships(board):
                 count += 1
     return count
 
-create_ships()
-turns = 10
+
+"""
+From here on is the main logic of the battleship game.
+"""
+if __name__ == "__main__":
+    create_ships(hidden_board_user)
+    create_ships(hidden_board_computer)
+
+    turns = 10
