@@ -90,3 +90,10 @@ if __name__ == "__main__":
     create_ships(hidden_board_computer)
 
     turns = 10
+    while turns > 0:
+        # Player's turn
+        print('Your turn!')
+        print_board(visible_board_computer)
+        row, column = get_ship_location()
+
+        
