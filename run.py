@@ -118,4 +118,15 @@ if __name__ == "__main__":
         print_board(visible_board_user)
         guess_row, guess_column = computer_guess()
 
+        if visible_board_user[guess_row][guess_column] == "-":
+            print(" ")
+        elif hidden_board_user[guess_row][guess_column] == "X":
+            print("Computer hit one of your battleships!")
+            visible_board_user[guess_row][guess_column] = "X"
+            turns -= 1
+        else:
+            print("Computer MISS!")
+            visible_board_user[guess_row][guess_column] = "-"
+            turns -= 1
+
         
