@@ -112,3 +112,10 @@ if __name__ == "__main__":
             break
 
         print("You have " + str(turns) + " turns left")
+
+        # Computer's turn
+        print("\nComputer's turn!")
+        print_board(visible_board_user)
+        guess_row, guess_column = computer_guess()
+
+        
