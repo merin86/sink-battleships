@@ -129,4 +129,10 @@ if __name__ == "__main__":
             visible_board_user[guess_row][guess_column] = "-"
             turns -= 1
 
-        
+        if count_hit_ships(visible_board_user) == 5:
+            print("All your battleships are sunk! You lose!")
+            break
+
+        if turns == 0:
+            print("You ran out of turns. Game over!")
+            
