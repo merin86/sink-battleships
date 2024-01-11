@@ -1,4 +1,4 @@
-import random
+from random import randint
 
 
 # On this board the ships are placed out and hidden
@@ -15,7 +15,18 @@ def print_board(board):
     and column labels on the top, creating a visual representation
     of the game board.
     """
-    pass
+    print("  A B C D E")
+    print("  +-+-+-+-+")
+    for row_number, row in enumerate(board, start=1):
+        print(f"{row_number}|{'|'.join(row)}|")
+
+letters_to_numbers = {
+    'A': 0,
+    'B': 1,
+    'C': 2,
+    'D': 3,
+    'E': 4,
+}
 
 
 def create_ships():
@@ -33,3 +44,5 @@ def computer_guess():
 def count_hit_ships():
     pass
 
+create_ships()
+turns = 10
