@@ -96,4 +96,13 @@ if __name__ == "__main__":
         print_board(visible_board_computer)
         row, column = get_ship_location()
 
-        
+        if visible_board_computer[row][column] == "-":
+            print("You guessed that one already.")
+        elif hidden_board_computer[row][column] == "X":
+            print("HIT!")
+            visible_board_computer[row][column] = "X"
+            turns -= 1
+        else:
+            print("MISS!")
+            visible_board_computer[row][column] = "-"
+            turns -= 1
