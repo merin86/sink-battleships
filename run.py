@@ -106,3 +106,9 @@ if __name__ == "__main__":
             print("MISS!")
             visible_board_computer[row][column] = "-"
             turns -= 1
+        
+        if count_hit_ships(visible_board_computer) == 5:
+            print("You sank all battleships! You win!")
+            break
+
+        print("You have " + str(turns) + " turns left")
