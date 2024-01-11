@@ -67,8 +67,18 @@ def computer_guess():
     return guess_row, guess_column
 
 
-def count_hit_ships():
-    pass
+def count_hit_ships(board):
+    """
+    This function provides the count of hit ships on the game board
+    by iterating through each element and counting the occurrences
+    of the "X" symbol.
+    """
+    count = 0
+    for row in board:
+        for column in row:
+            if column == "X":
+                count += 1
+    return count
 
 create_ships()
 turns = 10
