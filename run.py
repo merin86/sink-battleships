@@ -30,7 +30,7 @@ letters_to_numbers = {
 }
 
 
-def create_ships():
+def create_ships(board):
     """
     This function places five ships randomly on the board, making
     sure not to overlap them by checking if a chosen position is
@@ -48,11 +48,11 @@ def get_ship_location():
     This function ensures that the user provides valid row and column
     inputs for the location of a ship on the game board.
     """
-    row = input("Enter the row of the ship: ").upper()
+    row = input("Enter the row of the ship(1-5): ").upper()
     while row not in "12345":
         print('Please choose a valid row as the current selection is not suitable')
         row = input("Enter the row of the ship: ").upper()
-    column = input("Enter the column of the ship: ").upper()
+    column = input("Enter the column of the ship(A-E): ").upper()
     while column not in "ABCDE":
         print('Please choose a valid column as the current selection is not suitable')
         column = input("Enter the column of the ship: ").upper()
@@ -94,11 +94,17 @@ if __name__ == "__main__":
         # Player's turn
         print('Your turn!')
         print_board(visible_board_computer)
-        row, column = get_ship_location()
+        while True:
+            row, column = get_ship_location()
 
-        if visible_board_computer[row][column] == "-":
-            print("You guessed that one already.")
-        elif hidden_board_computer[row][column] == "X":
+            if visible_board_computer[row][column] == "-":
+                print("You guessed that one already. Try again.")
+            elif visible_board_computer[row][column] == "X":
+                print("You already hit this ship. Try again.")
+            else:
+                break
+
+        if hidden_board_computer[row][column] == "X":
             print("HIT!")
             visible_board_computer[row][column] = "X"
             turns -= 1
@@ -116,18 +122,20 @@ if __name__ == "__main__":
         # Computer's turn
         print("\nComputer's turn!")
         print_board(visible_board_user)
-        guess_row, guess_column = computer_guess()
+        while True:
+            guess_row, guess_column = computer_guess()
 
-        if visible_board_user[guess_row][guess_column] == "-":
-            print(" ")
-        elif hidden_board_user[guess_row][guess_column] == "X":
+            if visible_board_user[guess_row][guess_column] in ["-", "X"]:
+                continue
+            else:
+                break
+
+        if hidden_board_user[guess_row][guess_column] == "X":
             print("Computer hit one of your battleships!")
             visible_board_user[guess_row][guess_column] = "X"
-            turns -= 1
         else:
             print("Computer MISS!")
             visible_board_user[guess_row][guess_column] = "-"
-            turns -= 1
 
         if count_hit_ships(visible_board_user) == 5:
             print("All your battleships are sunk! You lose!")
@@ -135,4 +143,3 @@ if __name__ == "__main__":
 
         if turns == 0:
             print("You ran out of turns. Game over!")
-            
