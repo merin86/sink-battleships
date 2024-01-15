@@ -48,14 +48,14 @@ def get_ship_location():
     This function ensures that the user provides valid row and column
     inputs for the location of a ship on the game board.
     """
-    row = input("Enter the row of the ship(1-5): ").upper()
+    row = input("Enter the row of the ship(1-5):\n").upper()
     while row not in "12345":
         print('Please choose a valid row as the current selection is not suitable')
-        row = input("Enter the row of the ship: ").upper()
-    column = input("Enter the column of the ship(A-E): ").upper()
+        row = input("Enter the row of the ship:\n").upper()
+    column = input("Enter the column of the ship(A-E):\n").upper()
     while column not in "ABCDE":
         print('Please choose a valid column as the current selection is not suitable')
-        column = input("Enter the column of the ship: ").upper()
+        column = input("Enter the column of the ship:\n").upper()
     return int(row) - 1, letters_to_numbers[column]
 
 
@@ -168,7 +168,7 @@ def play():
 Main logic and initial interaction.
 """
 if __name__ == "__main__":
-    response = input("Welcome to Sink Battleships! Want to play? (Y/N): ").upper()
+    response = input("Welcome to Sink Battleships! Want to play? (Y/N):\n").upper()
     if response == "Y":
         print("Starting game...")
         setup_game()
