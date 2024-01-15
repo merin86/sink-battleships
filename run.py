@@ -142,4 +142,16 @@ if __name__ == "__main__":
             break
 
         if turns == 0:
-            print("You ran out of turns. Game over!")
+            player_hits = count_hit_ships(visible_board_computer)
+            computer_hits = count_hit_ships(visible_board_user)
+            print("Game over! Counting the number of hits...")
+            print(f"Your hits: {player_hits}")
+            print(f"Computer's hits: {computer_hits}")
+
+            if player_hits > computer_hits:
+                print("You won by sinking more ships!")
+            elif computer_hits > player_hits:
+                print("Computer won by sinking more ships!")
+            else:
+                print("It's a tie! Both sunk the same number of ships.")
+            break
