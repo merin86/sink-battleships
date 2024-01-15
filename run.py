@@ -82,13 +82,20 @@ def count_hit_ships(board):
     return count
 
 
-"""
-From here on is the main logic of the battleship game.
-"""
-if __name__ == "__main__":
+def setup_game():
+    """
+    This function sets up the game by creating ships.
+    """
     create_ships(hidden_board_user)
     create_ships(hidden_board_computer)
 
+
+def play():
+    """
+    This function manages turns and checks for correct input by both player
+    and computer. In the end of the game it announces the winner, or if there's
+    a tie.
+    """
     turns = 10
     while turns > 0:
         # Player's turn
@@ -155,3 +162,18 @@ if __name__ == "__main__":
             else:
                 print("It's a tie! Both sunk the same number of ships.")
             break
+
+
+"""
+Main logic and initial interaction.
+"""
+if __name__ == "__main__":
+    response = input("Welcome to Sink Battleships! Want to play? (Y/N): ").upper()
+    if response == "Y":
+        print("Starting game...")
+        setup_game()
+        play()
+    elif response == "N":
+        print("Okay, maybe another time.")
+    else:
+        print("Invalid input. Please enter 'Y' for Yes or 'N' for No.")
