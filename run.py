@@ -168,12 +168,15 @@ def play():
 Main logic and initial interaction.
 """
 if __name__ == "__main__":
-    response = input("Welcome to Sink Battleships! Want to play? (Y/N):\n").upper()
-    if response == "Y":
-        print("Starting game...")
-        setup_game()
-        play()
-    elif response == "N":
-        print("Okay, maybe another time.")
-    else:
-        print("Invalid input. Please enter 'Y' for Yes or 'N' for No.")
+    while True:
+        response = input("Welcome to Sink Battleships! Want to play? (Y/N):\n").upper()
+        if response == "Y":
+            print("Starting game...")
+            setup_game()
+            play()
+            break
+        elif response == "N":
+            print("Okay, maybe another time.")
+            break
+        else:
+            print("Invalid input. Please enter 'Y' for Yes or 'N' for No.")
