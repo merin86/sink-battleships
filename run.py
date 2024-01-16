@@ -96,7 +96,7 @@ def play():
     and computer. In the end of the game it announces the winner, or if there's
     a tie.
     """
-    turns = 10
+    turns = 1
     while turns > 0:
         # Player's turn
         print('Your turn!')
@@ -163,6 +163,13 @@ def play():
                 print("It's a tie! Both sunk the same number of ships.")
             break
 
+def start_game():
+    """
+    This function makes it possible for the player to play the game again.
+    """
+    setup_game()
+    play()
+
 
 """
 Main logic and initial interaction.
@@ -172,9 +179,11 @@ if __name__ == "__main__":
         response = input("Welcome to Sink Battleships! Want to play? (Y/N):\n").upper()
         if response == "Y":
             print("Starting game...")
-            setup_game()
-            play()
-            break
+            start_game()
+            play_again = input("Do you want to play again? (Y/N):\n").upper()
+            if play_again != "Y":
+                print("Thanks for playing! Goodbye!")
+                break
         elif response == "N":
             print("Okay, maybe another time.")
             break
