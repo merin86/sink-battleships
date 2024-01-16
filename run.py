@@ -84,7 +84,7 @@ def count_hit_ships(board):
 
 def setup_game():
     """
-    This function sets up the game by creating ships.
+    This function creates ships on the boards.
     """
     create_ships(hidden_board_user)
     create_ships(hidden_board_computer)
@@ -96,7 +96,7 @@ def play():
     and computer. In the end of the game it announces the winner, or if there's
     a tie.
     """
-    turns = 1
+    turns = 10
     while turns > 0:
         # Player's turn
         print('Your turn!')
@@ -167,6 +167,13 @@ def start_game():
     """
     This function makes it possible for the player to play the game again.
     """
+    global hidden_board_user, hidden_board_computer, visible_board_user, visible_board_computer
+
+    hidden_board_user = [[" "] * 5 for _ in range(5)]
+    hidden_board_computer = [[" "] * 5 for _ in range(5)]
+    visible_board_user = [[" "] * 5 for _ in range(5)]
+    visible_board_computer = [[" "] * 5 for _ in range(5)]
+
     setup_game()
     play()
 
@@ -181,7 +188,10 @@ if __name__ == "__main__":
             print("Starting game...")
             start_game()
             play_again = input("Do you want to play again? (Y/N):\n").upper()
-            if play_again != "Y":
+            if play_again == "Y":
+                print("Starting a new game...")
+                start_game()
+            else:
                 print("Thanks for playing! Goodbye!")
                 break
         elif response == "N":
