@@ -21,6 +21,11 @@ Sink Battleships is a textual version of the classic Battleship game. Players al
 
 ## Features
 
+- Start the game
+    - Before the game starts, a message appears asking if the user wants to play. Here the user can choose yes or no.
+
+<img src="docs/images/start.jpg">
+
 ## Technologies Used
 
 [Python](https://www.python.org/)  -  The programming language used for game development.
