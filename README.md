@@ -23,6 +23,8 @@ Sink Battleships is a textual version of the classic Battleship game. Players al
 
 ## Technologies Used
 
+[Python](https://www.python.org/)  -  The programming language used for game development.
+
 ## Testing
 
 ## Validator
