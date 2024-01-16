@@ -1,13 +1,19 @@
 from random import randint
 
 
-# On this board the ships are placed out and hidden
+"""
+On this board the ships are placed out and hidden
+"""
 hidden_board_user = [[" "] * 5 for x in range(5)]
 hidden_board_computer = [[" "] * 5 for x in range(5)]
 
-# This board is updated during the game by showing the misses and hits of the ships
+"""
+This board is updated during the game by showing the misses and
+hits of the ships
+"""
 visible_board_user = [[" "] * 5 for x in range(5)]
 visible_board_computer = [[" "] * 5 for x in range(5)]
+
 
 def print_board(board):
     """
@@ -19,6 +25,7 @@ def print_board(board):
     print("  +-+-+-+-+")
     for row_number, row in enumerate(board, start=1):
         print(f"{row_number}|{'|'.join(row)}|")
+
 
 # Converts a letter to its corresponding numerical value
 letters_to_numbers = {
@@ -50,11 +57,11 @@ def get_ship_location():
     """
     row = input("Enter the row of the ship(1-5):\n").upper()
     while row not in "12345":
-        print('Please choose a valid row as the current selection is not suitable')
+        print('Please choose a valid row')
         row = input("Enter the row of the ship:\n").upper()
     column = input("Enter the column of the ship(A-E):\n").upper()
     while column not in "ABCDE":
-        print('Please choose a valid column as the current selection is not suitable')
+        print('Please choose a valid column')
         column = input("Enter the column of the ship:\n").upper()
     return int(row) - 1, letters_to_numbers[column]
 
@@ -84,7 +91,8 @@ def count_hit_ships(board):
 
 def setup_game():
     """
-    This function creates ships on the boards.
+    This function sets up the game by placing ships on the hidden boards
+    of both the user and the computer.
     """
     create_ships(hidden_board_user)
     create_ships(hidden_board_computer)
@@ -119,7 +127,6 @@ def play():
             print("MISS!")
             visible_board_computer[row][column] = "-"
             turns -= 1
-        
         if count_hit_ships(visible_board_computer) == 5:
             print("You sank all battleships! You win!")
             break
@@ -163,11 +170,13 @@ def play():
                 print("It's a tie! Both sunk the same number of ships.")
             break
 
+
 def start_game():
     """
     This function makes it possible for the player to play the game again.
     """
-    global hidden_board_user, hidden_board_computer, visible_board_user, visible_board_computer
+    global hidden_board_user, hidden_board_computer
+    visible_board_user, visible_board_computer
 
     hidden_board_user = [[" "] * 5 for _ in range(5)]
     hidden_board_computer = [[" "] * 5 for _ in range(5)]
@@ -183,7 +192,7 @@ Main logic and initial interaction.
 """
 if __name__ == "__main__":
     while True:
-        response = input("Welcome to Sink Battleships! Want to play? (Y/N):\n").upper()
+        response = input("Wanna play Sink Battleships? (Y/N):\n").upper()
         if response == "Y":
             print("Starting game...")
             start_game()
