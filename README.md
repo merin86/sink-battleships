@@ -63,9 +63,16 @@ If you've never played Battleship before, here's a description:
 
 ## Technologies Used
 
-[Python](https://www.python.org/)  -  The programming language used for game development.
+### Languages Used
 
-`from random import randint` - This Python library was used for random number tasks.
+- [Python](https://www.python.org/)  -  The programming language used for game development.
+
+### Frameworks, Libraries & Programs Used
+
+- GitPod
+- [GitHub](https://github.com/)
+- [Heroku](https://www.heroku.com/home)
+- `from random import randint` - This Python library was used for random number tasks.
 
 ## Testing
 
