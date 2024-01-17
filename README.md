@@ -71,6 +71,10 @@ If you've never played Battleship before, here's a description:
 
 ## Validator
 
+- Only one error message appeared when the code was tested through the [Pep8 Validator](https://pep8ci.herokuapp.com/). The code on this line is considered too long. However, this code is not visible in the terminal, so I assumed there should be no problem.
+
+<img src="docs/images/linter.jpg">
+
 ## Bugs
 
 ## Deployment
