@@ -77,6 +77,18 @@ If you've never played Battleship before, here's a description:
 
 ## Bugs
 
+- **Bug:** Handle empty input
+    - **Description:** When the user would enter data for row and column and instead only pressed enter (ie empty input), the game crashed.
+    - **Solution:** By adding "not row/column or" within the respective "while-loop" under the "get_ship_location" function, instead the same error message came up as when the wrong input was made.
+
+Before:
+
+<img src="docs/images/bug1.jpg">
+
+After:
+
+<img src="docs/images/bug1fixed.jpg">
+
 ## Deployment
 
 ## Credits
