@@ -56,12 +56,12 @@ def get_ship_location():
     inputs for the location of a ship on the game board.
     """
     row = input("Enter the row of the ship(1-5):\n").upper()
-    while row not in "12345":
-        print('Please choose a valid row')
+    while not row or row not in "12345":
+        print('Please choose a valid row(1-5)')
         row = input("Enter the row of the ship:\n").upper()
     column = input("Enter the column of the ship(A-E):\n").upper()
-    while column not in "ABCDE":
-        print('Please choose a valid column')
+    while not column or column not in "ABCDE":
+        print('Please choose a valid column(A-E)')
         column = input("Enter the column of the ship:\n").upper()
     return int(row) - 1, letters_to_numbers[column]
 
