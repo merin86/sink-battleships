@@ -65,6 +65,8 @@ If you've never played Battleship before, here's a description:
 
 [Python](https://www.python.org/)  -  The programming language used for game development.
 
+`from random import randint` - This Python library was used for random number tasks.
+
 ## Testing
 
 - All the features mentioned above have been manually tested and work without hindrance.
@@ -90,5 +92,15 @@ After:
 <img src="docs/images/bug1fixed.jpg">
 
 ## Deployment
+
+This project was deployed using Code Institute's mock terminal for Heroku.
+
+- Steps for deployment:
+    - Create an account on Heroku
+    - Create a new Heroku app
+    - In the new app, go to settings and add a Config var with the key: PORT and the value: 8000
+    - Set the buildpacks to Python and NodeJS in that order
+    - Then you go under the "Deploy" tab, select "GitHub" as "Deployment method", search for the name of your repository and press connect
+    - Next I selected "Enable Automatic Deploys"
 
 ## Credits
