@@ -27,13 +27,16 @@ If you've never played Battleship before, here's a description:
 ## Features
 
 ### Start The Game
-- Before the game starts, a message appears asking if the user wants to play. Here the user can choose yes or no.
+- Before the game starts, a welcome text appears with short instructions on how the game works. Then a message appears asking if the user wants to play. Here the user can choose yes or no.
 
-<img src="docs/images/start.jpg">
+    <img src="docs/images/start.jpg">
 
 ### Boards
 - When the game starts, it is the user who starts selecting coordinates on the computers board. The user sees the board as a grid of cells and now has the option to first select a row (1-5) and then a column (A-E).
-- After the player has made his choices, the application tells if there was a miss or a hit, as well as how many rounds the player has left. Then the user's board appears and the computer makes a randomized guess. The text below the user's board reveals if the computer had a miss or a hit. Then it's the user's turn again.
+
+    <img src="docs/images/firstmove.jpg">
+
+- After the player has entered the coordinates, the application tells if there was a miss or a hit, as well as how many rounds the player has left. Then it's the computer's turn and the computer gets either a hit or a miss. The user's board is displayed and the ships can be seen on the board, represented as "@", as well as the computer's tried coordinates.
 
     <img src="docs/images/boards.jpg">
 
@@ -43,7 +46,7 @@ If you've never played Battleship before, here's a description:
 <img src="docs/images/indicators.jpg">
 
 ### Game Over
-- When all 10 rounds are completed, the application says the game is over. Number of hits is counted and the winner is announced. If user and computer hit the same number of ships, it will be a tie.
+- When all 10 rounds are completed, the final boards are shown and the application says the game is over. Number of hits is counted and the winner is announced. If user and computer hit the same number of ships, it will be a tie. Here, the ships that the user may not have managed to hit are also visible, represented as "@".
 - The user is then asked if they want to play again.
 
 <img src="docs/images/gameover.jpg">
@@ -84,7 +87,7 @@ If you've never played Battleship before, here's a description:
 
 ## Validator
 
-- Only one error message appeared when the code was tested through the [Pep8 Validator](https://pep8ci.herokuapp.com/). The code on this line is considered too long. However, this code is not visible in the terminal, so I assumed there should be no problem.
+- No errors were found when passing the code in the [Pep8 Validator](https://pep8ci.herokuapp.com/)
 
 <img src="docs/images/linter.jpg">
 
@@ -120,6 +123,6 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 
 - The structure of the application is taken from a [YouTube tutorial](https://www.youtube.com/watch?v=tF1WRCrd_HQ). After the structure was set, with the help of the tutorial, I updated the code and gave the game more and better features.
 - These two PP3 projects have been used as a source of inspiration for the development of this app: [Battleship Game](https://battleshipv2-8b5e10507413.herokuapp.com/), [Battle at Sea](https://pp3-battle-at-sea-a1894ff02de5.herokuapp.com/)
-- These websites have been used to find solutions to problems encountered during the development of the app: [W3Schools](https://www.w3schools.com/), [GeeksforGeeks](https://www.geeksforgeeks.org/) and [Online Python Tutor](https://pythontutor.com/).
+- These websites have been used to find solutions to problems encountered during the development of the app: [W3Schools](https://www.w3schools.com/), [GeeksforGeeks](https://www.geeksforgeeks.org/), [Python Morsels](https://www.pythonmorsels.com/) and [Online Python Tutor](https://pythontutor.com/).
 - I also looked at various Python lessons within the Code Institute's LMS.
 - Wikipedia reference for how to play the game.

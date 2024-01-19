@@ -203,7 +203,8 @@ def play():
 
 def start_game():
     """
-    This function makes it possible for the player to play the game again.
+    This function starts the game and makes it possible for the player
+    to play the game again.
     """
     global users_board, hidden_board_computer, \
         visible_board_computer
