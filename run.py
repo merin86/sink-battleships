@@ -104,7 +104,7 @@ def reveal_ships():
     """
     for row in range(5):
         for col in range(5):
-            if (hidden_board_computer[row][col] == "X" and 
+            if (hidden_board_computer[row][col] == "X" and
                     visible_board_computer[row][col] != "X"):
                 visible_board_computer[row][col] = "@"
 
@@ -178,15 +178,14 @@ def play():
             print("All your battleships are sunk! You lose!")
             break
 
-        if (turns == 0 or count_hit_ships(visible_board_computer) == 5 or 
-            count_hit_ships(users_board) == 5):
+        if (turns == 0 or count_hit_ships(visible_board_computer) == 5 or
+                count_hit_ships(users_board) == 5):
             print("\nFinal Boards:")
             reveal_ships()
             print("\nYour Final Board:")
             print_board(users_board)
             print("\nComputer's Final Board:")
             print_board(visible_board_computer)
-            
             player_hits = count_hit_ships(visible_board_computer)
             computer_hits = count_hit_ships(users_board)
             print("Game over! Counting the number of hits...")
