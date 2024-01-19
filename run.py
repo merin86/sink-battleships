@@ -190,11 +190,12 @@ def start_game():
 Main logic and initial interaction.
 """
 if __name__ == "__main__":
-    print("Welcome to Sink Battleships!"
+    print("Welcome to Sink Battleships! "
           "Try to guess where the five ships are hiding on the computer board. "
-          "All five ships are 1x1 in the grid and are randomly placed "
+          "All five ships are 1x1 in the grid and are randomly placed \n"
           "if you choose to play. "
-          "You have 10 tries to guess where all the ships exist. Good luck!")
+          "You have 10 tries to guess where all the ships exist. "
+          "Good luck!")
     while True:
         response = input("Wanna play Sink Battleships? (Y/N):\n").upper()
         if response == "Y":
