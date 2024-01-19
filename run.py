@@ -97,6 +97,18 @@ def count_hit_ships(board):
     return count
 
 
+def reveal_ships():
+    """
+    This function reveals the positions of the ships on the computer's
+    board by copying them from the hidden board to the visible board.
+    """
+    for row in range(5):
+        for col in range(5):
+            if (hidden_board_computer[row][col] == "X" and 
+                    visible_board_computer[row][col] != "X"):
+                visible_board_computer[row][col] = "@"
+
+
 def setup_game():
     """
     This function sets up the game by placing ships on the boards
@@ -166,8 +178,10 @@ def play():
             print("All your battleships are sunk! You lose!")
             break
 
-        if turns == 0 or count_hit_ships(visible_board_computer) == 5 or count_hit_ships(users_board) == 5:
+        if (turns == 0 or count_hit_ships(visible_board_computer) == 5 or 
+            count_hit_ships(users_board) == 5):
             print("\nFinal Boards:")
+            reveal_ships()
             print("\nYour Final Board:")
             print_board(users_board)
             print("\nComputer's Final Board:")
