@@ -144,8 +144,6 @@ def play():
 
         # Computer's turn
         print("\nComputer's turn!")
-        print("Your board:")
-        print_board(users_board)
         while True:
             guess_row, guess_column = computer_guess()
 
@@ -160,6 +158,9 @@ def play():
         else:
             print("Computer MISS!")
             users_board[guess_row][guess_column] = "-"
+
+        print("Your board:")
+        print_board(users_board)
 
         if count_hit_ships(users_board) == 5:
             print("All your battleships are sunk! You lose!")
@@ -206,10 +207,12 @@ intro_text = [
     "**************************************************",
     "* Welcome to Sink Battleships! Try to guess     *",
     "* where the five ships are hiding on the        *",
-    "* computer board. All five ships are 1x1 in the *",
-    "* grid and are randomly placed if you choose to *",
-    "* play. You have 10 tries to guess where all    *",
-    "* the ships exist. Good luck!                   *",
+    "* computer board. After your guess, the computer*",
+    "* will guess where your ships are hiding. All   *",
+    "* five ships are 1x1 in the grid and are        *",
+    "* randomly placed if you choose to play. You    *",
+    "* have 10 tries to guess where all the ships    *",
+    "* exist. Good luck!                             *",
     "**************************************************"
 ]
 
