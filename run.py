@@ -2,16 +2,12 @@ from random import randint
 
 
 """
-On this board the ships are placed out and hidden
+This is where boards are created for the game. The computer has
+two boards, one that is visible where the user guesses the ships'
+positions and one that is hidden where the ships are deployed.
 """
-hidden_board_user = [[" "] * 5 for x in range(5)]
+users_board = [[" "] * 5 for x in range(5)]
 hidden_board_computer = [[" "] * 5 for x in range(5)]
-
-"""
-This board is updated during the game by showing the misses and
-hits of the ships
-"""
-visible_board_user = [[" "] * 5 for x in range(5)]
 visible_board_computer = [[" "] * 5 for x in range(5)]
 
 
@@ -37,11 +33,23 @@ letters_to_numbers = {
 }
 
 
-def create_ships(board):
+def create_user_ships(board):
     """
-    This function places five ships randomly on the board, making
-    sure not to overlap them by checking if a chosen position is
-    already occupied before placing a ship.
+    This function places five ships randomly on the users board,
+    making sure not to overlap them by checking if a chosen
+    position is already occupied before placing a ship.
+    """
+    for ship in range(5):
+        ship_row, ship_column = randint(0, 4), randint(0, 4)
+        while board[ship_row][ship_column] == "@":
+            ship_row, ship_column = randint(0, 4), randint(0, 4)
+        board[ship_row][ship_column] = "@"
+
+
+def create_computer_ships(board):
+    """
+    This function does the same thing as the previous function,
+    but this time for the computers board.
     """
     for ship in range(5):
         ship_row, ship_column = randint(0, 4), randint(0, 4)
@@ -91,11 +99,11 @@ def count_hit_ships(board):
 
 def setup_game():
     """
-    This function sets up the game by placing ships on the hidden boards
+    This function sets up the game by placing ships on the boards
     of both the user and the computer.
     """
-    create_ships(hidden_board_user)
-    create_ships(hidden_board_computer)
+    create_user_ships(users_board)
+    create_computer_ships(hidden_board_computer)
 
 
 def play():
@@ -137,29 +145,29 @@ def play():
         # Computer's turn
         print("\nComputer's turn!")
         print("Your board:")
-        print_board(visible_board_user)
+        print_board(users_board)
         while True:
             guess_row, guess_column = computer_guess()
 
-            if visible_board_user[guess_row][guess_column] in ["-", "X"]:
+            if users_board[guess_row][guess_column] in ["-", "X"]:
                 continue
             else:
                 break
 
-        if hidden_board_user[guess_row][guess_column] == "X":
+        if users_board[guess_row][guess_column] == "@":
             print("Computer hit one of your battleships!")
-            visible_board_user[guess_row][guess_column] = "X"
+            users_board[guess_row][guess_column] = "X"
         else:
             print("Computer MISS!")
-            visible_board_user[guess_row][guess_column] = "-"
+            users_board[guess_row][guess_column] = "-"
 
-        if count_hit_ships(visible_board_user) == 5:
+        if count_hit_ships(users_board) == 5:
             print("All your battleships are sunk! You lose!")
             break
 
         if turns == 0:
             player_hits = count_hit_ships(visible_board_computer)
-            computer_hits = count_hit_ships(visible_board_user)
+            computer_hits = count_hit_ships(users_board)
             print("Game over! Counting the number of hits...")
             print(f"Your hits: {player_hits}")
             print(f"Computer's hits: {computer_hits}")
@@ -177,12 +185,11 @@ def start_game():
     """
     This function makes it possible for the player to play the game again.
     """
-    global hidden_board_user, hidden_board_computer, \
-        visible_board_user, visible_board_computer
+    global users_board, hidden_board_computer, \
+        visible_board_computer
 
-    hidden_board_user = [[" "] * 5 for _ in range(5)]
+    users_board = [[" "] * 5 for _ in range(5)]
     hidden_board_computer = [[" "] * 5 for _ in range(5)]
-    visible_board_user = [[" "] * 5 for _ in range(5)]
     visible_board_computer = [[" "] * 5 for _ in range(5)]
 
     setup_game()
