@@ -108,6 +108,7 @@ def play():
     while turns > 0:
         # Player's turn
         print('Your turn!')
+        print("Computer's board:")
         print_board(visible_board_computer)
         while True:
             row, column = get_ship_location()
@@ -135,6 +136,7 @@ def play():
 
         # Computer's turn
         print("\nComputer's turn!")
+        print("Your board:")
         print_board(visible_board_user)
         while True:
             guess_row, guess_column = computer_guess()
