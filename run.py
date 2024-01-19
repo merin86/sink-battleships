@@ -177,7 +177,8 @@ def start_game():
     """
     This function makes it possible for the player to play the game again.
     """
-    global hidden_board_user, hidden_board_computer, visible_board_user, visible_board_computer
+    global hidden_board_user, hidden_board_computer, \
+    visible_board_user, visible_board_computer
 
     hidden_board_user = [[" "] * 5 for _ in range(5)]
     hidden_board_computer = [[" "] * 5 for _ in range(5)]
