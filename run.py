@@ -226,6 +226,10 @@ intro_text = [
     "* randomly placed if you choose to play. You    *",
     "* have 10 tries to guess where all the ships    *",
     "* exist. Good luck!                             *",
+    "*                                                *",
+    "* '@' = Ship                                    *",
+    "* 'X' = Hit                                     *",
+    "* '-' = Miss                                    *",
     "**************************************************"
 ]
 
