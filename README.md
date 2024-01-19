@@ -120,6 +120,6 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 
 - The structure of the application is taken from a [YouTube tutorial](https://www.youtube.com/watch?v=tF1WRCrd_HQ). After the structure was set, with the help of the tutorial, I updated the code and gave the game more and better features.
 - These two PP3 projects have been used as a source of inspiration for the development of this app: [Battleship Game](https://battleshipv2-8b5e10507413.herokuapp.com/), [Battle at Sea](https://pp3-battle-at-sea-a1894ff02de5.herokuapp.com/)
-- These websites have been used to find solutions to problems encountered during the development of the app: [W3Schools](https://www.w3schools.com/), [GeeksforGeeks](https://www.geeksforgeeks.org/), [Online Python Tutor](https://pythontutor.com/) and [ChatGPT](https://chat.openai.com/).
+- These websites have been used to find solutions to problems encountered during the development of the app: [W3Schools](https://www.w3schools.com/), [GeeksforGeeks](https://www.geeksforgeeks.org/) and [Online Python Tutor](https://pythontutor.com/).
 - I also looked at various Python lessons within the Code Institute's LMS.
 - Wikipedia reference for how to play the game.
