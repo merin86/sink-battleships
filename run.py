@@ -218,20 +218,20 @@ def start_game():
 
 
 intro_text = [
-    "*************************************************",
-    "* Welcome to Sink Battleships! Try to guess     *",
-    "* where the five ships are hiding on the        *",
-    "* computer board. After your guess, the computer*",
-    "* will guess where your ships are hiding. All   *",
-    "* five ships are 1x1 in the grid and are        *",
-    "* randomly placed if you choose to play. You    *",
-    "* have 10 tries to guess where all the ships    *",
-    "* exist. Good luck!                             *",
-    "*                                               *",
-    "* '@' = Ship                                    *",
-    "* 'X' = Hit                                     *",
-    "* '-' = Miss                                    *",
-    "*************************************************"
+    "**************************************************",
+    "* Welcome to Sink Battleships! Try to guess      *",
+    "* where the five ships are hiding on the         *",
+    "* computer board. After your guess, the computer *",
+    "* will guess where your ships are hiding. All    *",
+    "* five ships are 1x1 in the grid and are         *",
+    "* randomly placed if you choose to play. You     *",
+    "* have 10 tries to guess where all the ships     *",
+    "* exist. Good luck!                              *",
+    "*                                                *",
+    "* '@' = Ship                                     *",
+    "* 'X' = Hit                                      *",
+    "* '-' = Miss                                     *",
+    "**************************************************"
 ]
 
 
